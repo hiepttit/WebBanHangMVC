@@ -71,7 +71,25 @@
                                         </a>
                                     </div>
                                     <script type="text/javascript">
-                                        var prodGallery = jQblvg.parseJSON('{"prod_1":{"main":{"orig":"../../Images/ThePicture/@Html.Action("ImageMainDetail", new { id = @ViewBag.item.ID })","main":"../../Images/ThePicture/@Html.Action("ImageMainDetail", new { id = @ViewBag.item.ID })","thumb":"../../Images/ThePicture/@Html.Action("ImageMainDetail", new { id = @ViewBag.item.ID })","label":""},"gallery":{@for (int i = 0; i < lstImg.Count;i++) { }"item_{0}":{"orig":"../../Images/ThePicture/{1}","main":"../../Images/ThePicture/{1}","thumb":"../../Images/ThePicture/{1}","label":""}},"type":"simple","video":false}}'),
+    @{
+                                            @*string tempStr = "";
+                                            for (int i = 0; i < lstImg.Count; i++)
+                                            {
+                                                //var s = string.Format("\"item_{0}\":{\"orig\":\"..//..//Images//ThePicture//{1}\",\"main\":\"..//..//Images//ThePicture//{1}\",\"thumb\":\"..//..//Images//ThePicture//{1}\",\"label\":\"\"}", i.ToString(), lstImg[i]);
+                                                var s = "\"item_" + i + "\":{\"orig\":\"..//..//Images//ThePicture//" + lstImg[i] + "\",\"main\":\"..//..//Images//ThePicture//" + lstImg[i] + "\",\"thumb\":\"..//..//Images//ThePicture//" + lstImg[i] + "\",\"label\":\"\"}";
+
+                                                //tempStr += s.Replace('/',' ');
+
+                                                tempStr += s.ToString();
+                                                if (i != (lstImg.Count - 1))
+                                                {
+                                                    tempStr += ",";
+                                                }
+                                                }*@
+                                            }
+                                        // THis code to watch
+                                        @*@ViewBag.lstImg*@
+                                        var prodGallery = jQblvg.parseJSON('{"prod_1":{"main":{"orig":"../../Images/ThePicture/@Html.Action("ImageMainDetail", new { id = @ViewBag.item.ID })","main":"../../Images/ThePicture/@Html.Action("ImageMainDetail", new { id = @ViewBag.item.ID })","thumb":"../../Images/ThePicture/@Html.Action("ImageMainDetail", new { id = @ViewBag.item.ID })","label":""},"gallery":{@ViewBag.lstImg},"type":"simple","video":false}}'),
                                             gallery_elmnt = jQblvg('.product-img-box'),
                                             galleryObj = new Object(),
                                             gallery_conf = new Object();

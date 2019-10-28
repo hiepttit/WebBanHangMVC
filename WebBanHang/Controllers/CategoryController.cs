@@ -13,9 +13,14 @@ namespace WebBanHang.Controllers
         // GET: /Category/
         public ActionResult Index()
         {
+            return View();
+        }
+        [ChildActionOnly]
+        public ActionResult GetCategory()
+        {
             ProductsDAO dao = new ProductsDAO();
             var lstCt = dao.GetAllCategory();
-            return View("~/Views/Shared/_Layout.cshtml", lstCt);
+            return PartialView(lstCt);
         }
 	}
 }

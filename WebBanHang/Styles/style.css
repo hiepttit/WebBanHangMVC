@@ -1533,3 +1533,6 @@ p.para{
 ul.dropdown-menu li a{
     color:black;
 }
+ul.dropdown-menu li a:hover{
+    color:red;
+}

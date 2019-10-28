@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebBanHang.DAO;
+using WebBanHang.Models;
 
 namespace WebBanHang.Controllers
 {
@@ -27,5 +28,6 @@ namespace WebBanHang.Controllers
                 temp = old.ImgLink.ToString();
             return temp;
         }
+       
 	}
 }

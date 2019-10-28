@@ -23,5 +23,9 @@ namespace WebBanHang.DAO
             var lst = Model.Categories.ToList();
             return lst;
         }
+        public List<ProductsImg> ListImg(int idProducts)
+        {
+            return Model.ProductsImgs.Where(p => p.ProductID == idProducts).OrderBy(p=>p.ID).ToList();
+        }
     }
 }
