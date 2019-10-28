@@ -5,8 +5,8 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 */
 /* reset */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
-article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,navLC ul,navLC li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,navLC,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, navLC, section {display: block;}
 ol,ul{list-style:none;margin:0;padding:0;}
 blockquote,q{quotes:none;}
 blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
@@ -24,8 +24,8 @@ a{text-decoration:none;}
 .vertical-base{	vertical-align:baseline;}/* vertical align baseline */
 .vertical-top{	vertical-align:top;}/* vertical align top */
 .underline{	padding-bottom:5px;	border-bottom: 1px solid #eee; margin:0 0 20px 0;}/* Add 5px bottom padding and a underline */
-nav.vertical ul li{	display:block;}/* vertical menu */
-nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+navLC.vertical ul li{	display:block;}/* vertical menu */
+navLC.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
 @font-face {
@@ -36,6 +36,21 @@ body {
 	font-family: 'bebas_neueregular';
 	background:#ffffff;
 	font-size: 100%;
+}
+body a:hover {
+	text-decoration:none;
+}
+body a{
+	text-decoration:none;
+}
+body a:active{
+	text-decoration:none;
+}
+body a:visited{
+	text-decoration:none;
+}
+body a:link{
+	text-decoration:none;
 }
 .wrap{
 	margin:0 auto;
@@ -90,8 +105,8 @@ body {
 .h_search input[type="submit"]:hover {
 	background: url('../images/search_h.png') no-repeat 10px 5px;
 }
-/*------start-top-nav------*/
-.top-nav {
+/*------start-top-navLC------*/
+.top-navLC {
 	display:none;
 	position:relative;
 }
@@ -106,7 +121,7 @@ body {
     color:#FFF;
     background:#4A4444;
 }
-.nav-item a:hover,.nav-item a.active {
+.nav-item a:hover,.navLC-item a.active {
 	background: #43B6A8;
 	color: #ffffff;
 }
@@ -529,20 +544,20 @@ body {
 	font-size: 1.8em;
 	color: #ffffff;
 }
-.f_nav{
+.f_navLC{
 	margin-top: 4%;
 }
-.f_nav li{
+.f_navLC li{
 	display: block;
 }
-.f_nav li a{
+.f_navLC li a{
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 1em;
 	color: #fefefe;
 	line-height: 1.8em;	
 	text-transform: capitalize;
 }
-.f_nav li a:hover{
+.f_navLC li a:hover{
 	color: #ffffff;
 	text-decoration: underline;
 }
@@ -612,7 +627,7 @@ body {
 #info p {
 	margin:5px 0 0 0;
 }
-.container {
+.containerLC {
 	font-family: 'Source Sans Pro', sans-serif; 
 	position: relative; 
 	-webkit-transition: all 1s ease;
@@ -963,14 +978,14 @@ p.para{
 	text-transform: uppercase;
 	text-shadow: 0 1px 0 #ffffff;
 }
-.share_nav{
+.share_navLC{
 	float:left;
 }
-.share_nav li {
+.share_navLC li {
 	display: inline-block;
 	margin: 5px 6px;
 }
-.share_nav li a {
+.share_navLC li a {
 	background: #9C9C9C;
 	padding: 10px;
 	display: block;
@@ -984,7 +999,7 @@ p.para{
 	-moz-border-radius: 30px;
 	-o-border-radius: 30px;
 }
-.share_nav li a:hover{
+.share_navLC li a:hover{
 	background: #3CC395;
 }
 .share li img {
@@ -1031,18 +1046,18 @@ p.para{
 	padding: 10px 20px;
 	background: #4CCFC1;
 }
-.single-nav li {
+.single-navLC li {
 	list-style-image: url(../images/marker1.gif);
 	border-bottom: 1px dotted #E8E8E8;
 }
-.single-nav li a {
+.single-navLC li a {
 	text-transform: capitalize;
 	font-size: 0.8725em;
 	color: #555555;
 	padding: 15px 20px;
 	display: block;
 }
-.single-nav li a:hover {
+.single-navLC li a:hover {
 	background: #FCFCFC;
 	color: #5EAFA5;
 }
@@ -1297,6 +1312,7 @@ p.para{
 		width:95%;
 	}
 	.h_menu ul li a {
+        text-decoration:none;
 		padding: 10px 12px;
 	}
 	.span1_of_1 {
@@ -1340,7 +1356,7 @@ p.para{
 	.span1_of_1_des {
 		width: 38.3333%;
 	}
-	.single-nav li a {
+	.single-navLC li a {
 		padding: 10px 10px;
 	}
 }
@@ -1360,7 +1376,7 @@ p.para{
 	.header_sub {
 		padding: 1% 2%;
 	}
-	.top-nav {
+	.top-navLC {
 		display: block;
 	}
 	.ser-main {
@@ -1513,4 +1529,7 @@ p.para{
 	.tabs {
 		margin: 10px auto;
 	}
+}
+ul.dropdown-menu li a{
+    color:black;
 }

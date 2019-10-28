@@ -121,7 +121,7 @@
                 @foreach (var item in lst)
                 {
                     <div class="grid1_of_3">
-                        <a href="@Url.Content("/Product/Detail")">
+                        <a href="@Url.Content("/Product/Detail/"+@item.ID)">
                             <img src="~/Images/ThePicture/@Html.Action("ImageItem", new { id = @item.ID })" />
                             <h3>@item.ProductName </h3>
                             <div class="price">

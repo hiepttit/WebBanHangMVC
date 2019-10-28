@@ -1,6 +1,7 @@
 ﻿
 @{  
     ViewBag.Title = "Detail";
+    var lstImg = ViewBag.lstImg;
 }
 <script type="text/javascript" src="~/js/jquery.min.js"></script>
 <script type="text/javascript" src="~/js/cloud-zoom.1.0.3.min.js"></script>
@@ -65,12 +66,12 @@
                                         </div>
                                     </div>
                                     <div class="product-image">
-                                        <a class="cs-fancybox-thumbs cloud-zoom" rel="adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5" data-fancybox-group="thumb" href="../Images/0001-2.jpg" title="Women Shorts" alt="Women Shorts">
-                                            <img src="../Images/0001-2.jpg" alt="Women Shorts" title="Women Shorts" />
+                                        <a class="cs-fancybox-thumbs cloud-zoom" rel="adjustX:30,adjustY:0,position:'right',tint:'#202020',tintOpacity:0.5,smoothMove:2,showTitle:true,titleOpacity:0.5" data-fancybox-group="thumb" href="~/Images/0001-2.jpg" title="Women Shorts" alt="Women Shorts">
+                                            <img src="~/Images/0001-2.jpg" alt="Women Shorts" title="Women Shorts" />
                                         </a>
                                     </div>
                                     <script type="text/javascript">
-                                        var prodGallery = jQblvg.parseJSON('{"prod_1":{"main":{"orig":"../Images/0001-2.jpg","main":"../Images/large/0001-2.jpg","thumb":"../Images/small/0001-2.jpg","label":""},"gallery":{"item_0":{"orig":"../Images/0001-2.jpg","main":"../Images/large/0001-2.jpg","thumb":"../Images/small/0001-2.jpg","label":""},"item_1":{"orig":"../Images/0001-1.jpg","main":"../Images/large/0001-1.jpg","thumb":"../Images/small/0001-1.jpg","label":""},"item_2":{"orig":"../Images/0001-5.jpg","main":"../Images/large/0001-5.jpg","thumb":"../Images/small/0001-5.jpg","label":""},"item_3":{"orig":"../Images/0001-3.jpg","main":"../Images/large/0001-3.jpg","thumb":"../Images/small/0001-3.jpg","label":""},"item_4":{"orig":"../Images/0001-4.jpg","main":"../Images/large/0001-4.jpg","thumb":"../Images/small/0001-4.jpg","label":""}},"type":"simple","video":false}}'),
+                                        var prodGallery = jQblvg.parseJSON('{"prod_1":{"main":{"orig":"../../Images/ThePicture/@Html.Action("ImageMainDetail", new { id = @ViewBag.item.ID })","main":"../../Images/ThePicture/@Html.Action("ImageMainDetail", new { id = @ViewBag.item.ID })","thumb":"../../Images/ThePicture/@Html.Action("ImageMainDetail", new { id = @ViewBag.item.ID })","label":""},"gallery":{@for (int i = 0; i < lstImg.Count;i++) { }"item_{0}":{"orig":"../../Images/ThePicture/{1}","main":"../../Images/ThePicture/{1}","thumb":"../../Images/ThePicture/{1}","label":""}},"type":"simple","video":false}}'),
                                             gallery_elmnt = jQblvg('.product-img-box'),
                                             galleryObj = new Object(),
                                             gallery_conf = new Object();
@@ -110,9 +111,9 @@
                     <!-- start span1_of_1 -->
                     <div class="span1_of_1_des">
                         <div class="desc1">
-                            <h3>Lorem Ipsum is simply dummy text </h3>
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                            <h5>Rs. 399 <a href="#">click for offer</a></h5>
+                            <h3>@ViewBag.item.ProductName </h3>
+                            <p>@ViewBag.item.Details</p>
+                            <h5>@ViewBag.item.Prices </h5>
                             <div class="available">
                                 <h4>Available Options :</h4>
                                 <ul>
@@ -150,17 +151,21 @@
                                         <input type="submit" value="add to cart" title="" />
                                     </form>
                                 </div>
-                                <span class="span_right"><a href="#">login to save in wishlist </a></span>
+                                <div class="btn_form" style="margin-left:10px">
+                                    <form>
+                                        <input type="submit" value="Buy" title="" />
+                                    </form>
+                                </div>
                                 <div class="clear"></div>
                             </div>
                             <div class="share-desc">
                                 <div class="share">
                                     <h4>Share Product :</h4>
-                                    <ul class="share_nav">
-                                        <li><a href="#"><img src="../Images/facebook.png" title="facebook"></a></li>
-                                        <li><a href="#"><img src="../Images/twitter.png" title="Twiiter"></a></li>
-                                        <li><a href="#"><img src="../Images/rss.png" title="Rss"></a></li>
-                                        <li><a href="#"><img src="../Images/gpluse.png" title="Google+"></a></li>
+                                    <ul class="share_navLC">
+                                        <li><a href="#"><img src="~/Images/facebook.png" title="facebook"></a></li>
+                                        <li><a href="#"><img src="~/Images/twitter.png" title="Twiiter"></a></li>
+                                        <li><a href="#"><img src="~/Images/rss.png" title="Rss"></a></li>
+                                        <li><a href="#"><img src="~/Images/gpluse.png" title="Google+"></a></li>
                                     </ul>
                                 </div>
                                 <div class="clear"></div>
@@ -196,7 +201,7 @@
                             </div>
                             <div class="content-2">
                                 <p class="para"><span>WELCOME </span> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
-                                <ul class="qua_nav">
+                                <ul class="qua_navLC">
                                     <li>Multimedia Systems</li>
                                     <li>Digital media adapters</li>
                                     <li>Set top boxes for HDTV and IPTV Player applications on various Operating Systems and Hardware Platforms</li>
@@ -222,7 +227,7 @@
                 <div class="left_sidebar">
                     <div class="sellers">
                         <h4>Best Sellers</h4>
-                        <div class="single-nav">
+                        <div class="single-navLC">
                             <ul>
                                 <li><a href="#">Always free from repetition</a></li>
                                 <li><a href="#">Always free from repetition</a></li>
@@ -241,7 +246,7 @@
                         </div>
                         <div class="banner-wrap bottom_banner color_link">
                             <a href="#" class="main_link">
-                                <figure><img src="../Images/delivery.png" alt=""></figure>
+                                <figure><img src="~/Images/delivery.png" alt=""></figure>
                                 <h5><span>Free Shipping</span><br> on orders over $99.</h5><p>This offer is valid on all our store items.</p>
                             </a>
                         </div>

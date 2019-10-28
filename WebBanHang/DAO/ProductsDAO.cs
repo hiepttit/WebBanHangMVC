@@ -13,5 +13,15 @@ namespace WebBanHang.DAO
             var lst = Model.Products.OrderBy(p=>p.ID).Take(3).ToList();
             return lst;
         }
+        public List<ProductsImg> GetAllImgProduct()
+        {
+            var lst = Model.ProductsImgs.OrderBy(p => p.ProductID).ToList();
+            return lst;
+        }
+        public List<Category> GetAllCategory()
+        {
+            var lst = Model.Categories.ToList();
+            return lst;
+        }
     }
 }
